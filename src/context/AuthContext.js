@@ -1,15 +1,23 @@
 import { createContext, useState } from 'react';
 import React from 'react';
 
-const authContext = createContext();
-authContext = authContext.Provider;
+const AuthContext = createContext();
+AuthContext = AuthContext.Provider;
 
-function AuthContext() {
+function AuthContextProvider() {
 
     const [success, setsuccess] =useState("false");
     const [error, setError] =useState("null");
     const [loading, setLoading] =useState("false");
     const [userr, setUser] =useState("null");
+
+
+    //signup function
+    const authRegister= async (username, email, password)=>{
+     await fetch(URL,{
+      method:"POST"
+     })
+    }
   return (
     <div>
       
@@ -17,4 +25,4 @@ function AuthContext() {
   )
 }
 
-export default AuthContext
+export default AuthContextProvider
